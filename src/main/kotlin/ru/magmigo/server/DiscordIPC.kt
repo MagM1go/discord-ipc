@@ -34,7 +34,6 @@ public object DiscordIPC {
     public fun unlock(): Unit = locked.set(false)
 
     internal suspend fun start(clientId: Long) {
-        println(Json.encodeToString(buildActivityCommand()))
         client.webSocket(
             method = HttpMethod.Get,
             host = Application.DISCORD_WEBSOCKET,
