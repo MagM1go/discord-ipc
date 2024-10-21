@@ -1,9 +1,7 @@
 package ru.magmigo
 
-import kotlinx.coroutines.runBlocking
 import ru.magmigo.models.Button
 import ru.magmigo.server.DiscordIPC
-import kotlin.concurrent.thread
 
 public class Discord(public val clientId: Long, body: Body.() -> Unit) {
     init { apply { body(Body) } }
