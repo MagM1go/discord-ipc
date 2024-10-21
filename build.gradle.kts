@@ -1,5 +1,6 @@
 plugins {
     application
+    `maven-publish`
 
     kotlin("plugin.serialization") version "2.0.20"
     kotlin("jvm") version "2.0.20"
@@ -24,4 +25,16 @@ dependencies {
 kotlin {
     jvmToolchain(21)
     explicitApi()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "ru.magmigo"
+            artifactId = "discord-rpc"
+            version = version
+
+            from(components["kotlin"])
+        }
+    }
 }
