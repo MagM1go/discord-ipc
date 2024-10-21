@@ -95,16 +95,3 @@ public fun discord(
     clientId: Long,
     body: Discord.Body.() -> Unit
 ): Discord = Discord(clientId, body)
-
-public fun main() {
-    val presence = discord(235148962103951360) {
-        state("test")
-    }
-
-    thread { runBlocking { presence.start() } }
-    thread {
-        Thread.sleep(5_000L)
-        presence.ipc().unlock()
-        presence.update("asdkajdlkskjllkjdalkdaslkdkd")
-    }
-}
