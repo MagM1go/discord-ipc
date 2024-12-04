@@ -1,5 +1,6 @@
 # Discord RPC client.
 
+СЫНИЩЕ БЛЯДИ ЕБАНОЙ, КАКУЮ ЖЕ ХУЙНЮ ТЫ ВЫСРАЛ
 ## Usage
 ```kotlin
 val presence = discord(clientId) {
